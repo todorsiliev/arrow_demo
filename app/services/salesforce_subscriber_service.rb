@@ -4,8 +4,7 @@ require 'faye'
 class SalesforceSubscriberService
     attr_reader :client
 
-    LOG_PATH = "#{Rails.root}/log/#{Rails.env}_salesforce.log"
-    LOGGER = Logger.new(LOG_PATH)
+    LOGGER = Logger.new(STDOUT)
 
     def initialize
         @client =  Restforce.new(
